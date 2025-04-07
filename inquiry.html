@@ -38,6 +38,8 @@
             <input type="text" id="name" required>
             <label for="email">Email:</label>
             <input type="email" id="email" required>
+            <label for="title">Title:</label>
+            <input type="text" id="title" required>
             <label for="message">Message:</label>
             <textarea id="message" rows="5" required></textarea>
             <button type="submit">Submit Inquiry</button>
@@ -47,11 +49,13 @@
                 e.preventDefault();
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
+                const title = document.getElementById('title').value;
                 const message = document.getElementById('message').value;
 
                 emailjs.send("service_02b3bnp", "template_jehs41p", {
                     name: name,
                     email: email,
+                    title: title,
                     message: message
                 })
                .then(function (response) {
