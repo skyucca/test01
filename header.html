@@ -11,8 +11,8 @@
                         <li><a href="service2.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Dropshipping Service</a></li>
                         <li><a href="service3.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Photos & Designs</a></li>
                     </ul>
-                </li>                
-		<li class="relative">
+                </li>
+                <li class="relative">
                     <a href="products.html" class="text-gray-700 hover:text-gray-900">Products</a>
                     <ul class="absolute top-full left-0 bg-white shadow-md hidden">
                         <li><a href="product1.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">product1</a></li>
@@ -25,20 +25,21 @@
         </nav>
     </div>
     <script>
-        const servicesMenu = document.querySelector('li.relative');
-        if (servicesMenu) {
-            servicesMenu.addEventListener('mouseenter', () => {
-                const dropdown = servicesMenu.querySelector('ul');
+        // 获取所有具有 relative 类的 li 元素
+        const menuItems = document.querySelectorAll('li.relative');
+        menuItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const dropdown = item.querySelector('ul');
                 if (dropdown) {
                     dropdown.classList.remove('hidden');
                 }
             });
-            servicesMenu.addEventListener('mouseleave', () => {
-                const dropdown = servicesMenu.querySelector('ul');
+            item.addEventListener('mouseleave', () => {
+                const dropdown = item.querySelector('ul');
                 if (dropdown) {
                     dropdown.classList.add('hidden');
                 }
             });
-        }
+        });
     </script>
 </header>
