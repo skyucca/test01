@@ -1,4 +1,53 @@
 <footer class="bg-white shadow-md mt-8">
+    <form id="inquiryForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" rows="5" required></textarea>
+
+        <button type="submit">Submit Inquiry</button>
+    </form>
+    <script>
+        document.getElementById('inquiryForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // 这里可以添加前端验证逻辑，比如检查邮箱格式等
+
+            // 使用 fetch 发送数据到服务器端处理
+            fetch('process_inquiry.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    message: message
+                })
+            })
+           .then(response => response.json())
+           .then(data => {
+                if (data.success) {
+                    alert('Your inquiry has been sent successfully!');
+                    // 可以在这里清空表单
+                    document.getElementById('inquiryForm').reset();
+                } else {
+                    alert('There was an error sending your inquiry. Please try again later.');
+                }
+            })
+           .catch(error => {
+                console.error('Error:', error);
+                alert('An unexpected error occurred. Please try again later.');
+            });
+        });
+    </script>
     <div class="container mx-auto px-4 py-6 flex justify-between items-center">
         <p class="text-gray-700">&copy; 2025 All rights reserved.</p>
         <p class="text-gray-700">Contact: nolasun@126.com</p>
