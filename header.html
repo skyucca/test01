@@ -48,4 +48,24 @@
             emailjs.init("MvOp4RBn18wlzkuQi"); // 替换为你的 EmailJS 用户 ID
         })();
     </script>
+    <script>
+        document.getElementById('inquiryForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            emailjs.send("service_02b3bnp", "template_jehs41p", {
+                name: name,
+                email: email,
+                message: message
+            })
+           .then(function (response) {
+                alert('Your inquiry has been sent successfully!');
+                document.getElementById('inquiryForm').reset();
+            }, function (error) {
+                alert('There was an error sending your inquiry. Please try again later.');
+            });
+        });
+    </script>
 </header>
