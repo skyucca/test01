@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>products</title>
+</head>
+
+<body class="font-sans bg-gray-100">
+    <!-- 导入导航栏 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+        });
+    </script>
+    <div id="header"></div>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- 这里可以添加新页面的主体内容 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div>
+                <img src="https://picsum.photos/600/400" alt="Sample Image" class="w-full h-auto rounded-md">
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">New Page Content</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    This is the content of the new page. You can customize it according to your needs.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- 导入页脚 -->
+    <script>
+        $(function () {
+            $("#footer").load("footer.html");
+        });
+    </script>
+    <div id="footer"></div>
+
+</body>
+
+</html>

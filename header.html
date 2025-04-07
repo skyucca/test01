@@ -1,0 +1,45 @@
+<header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="index.html" class="text-xl font-bold text-gray-800">Website Logo</a>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="text-gray-700 hover:text-gray-900">Home</a></li>
+                <li class="relative">
+                    <a href="services.html" class="text-gray-700 hover:text-gray-900">Our Services</a>
+                    <ul class="absolute top-full left-0 bg-white shadow-md hidden">
+                        <li><a href="service1.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Sourcing & Purchasing</a></li>
+                        <li><a href="service2.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Dropshipping Service</a></li>
+                        <li><a href="service3.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Photos & Designs</a></li>
+                    </ul>
+                </li>
+                
+		<li class="relative">
+                    <a href="products.html" class="text-gray-700 hover:text-gray-900">Products</a>
+                    <ul class="absolute top-full left-0 bg-white shadow-md hidden">
+                        <li><a href="product1.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">product1</a></li>
+                        <li><a href="product2.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">product2</a></li>
+                        <li><a href="product3.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">product3</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html" class="text-gray-700 hover:text-gray-900">About</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        const servicesMenu = document.querySelector('li.relative');
+        if (servicesMenu) {
+            servicesMenu.addEventListener('mouseenter', () => {
+                const dropdown = servicesMenu.querySelector('ul');
+                if (dropdown) {
+                    dropdown.classList.remove('hidden');
+                }
+            });
+            servicesMenu.addEventListener('mouseleave', () => {
+                const dropdown = servicesMenu.querySelector('ul');
+                if (dropdown) {
+                    dropdown.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</header>

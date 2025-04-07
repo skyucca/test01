@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>about</title>
+</head>
+
+<body class="font-sans bg-gray-100">
+    <!-- 导入导航栏 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+        });
+    </script>
+    <div id="header"></div>
+
+        <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div>
+                <img src="https://picsum.photos/600/402" alt="Sample Image 3" class="w-full h-auto rounded-md">
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Technology Trends</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    The world of technology is constantly evolving. Artificial intelligence, blockchain, and the Internet of Things are some of the hottest trends. These technologies are changing the way we live and work.
+                </p>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">The Future of Tech</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    In the future, we can expect even more exciting technological advancements. Self - driving cars, virtual reality, and augmented reality will become more mainstream. The possibilities are endless.
+                </p>
+            </div>
+            <div>
+                <img src="https://picsum.photos/600/403" alt="Sample Image 4" class="w-full h-auto rounded-md">
+            </div>
+        </div>
+    </main>
+
+    <!-- 导入页脚 -->
+    <script>
+        $(function () {
+            $("#footer").load("footer.html");
+        });
+    </script>
+    <div id="footer"></div>
+
+</body>
+
+</html>
