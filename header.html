@@ -42,53 +42,11 @@
             });
         });
     </script>
-    
-    
-    <script type="text/javascript"
-        // 通过EmailJS发送询盘
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
-       (function(){
-          emailjs.init({
-        publicKey: "MvOp4RBn18wlzkuQi",
-          });
-           // Do not allow headless browsers
-          blockHeadless: true,
-          blockList: {
-            // Block the suspended emails
-            list: ['foo@emailjs.com', 'bar@emailjs.com'],
-            // The variable contains the email address
-            watchVariable: 'userEmail',
-          },
-          limitRate: {
-            // Set the limit rate for the application
-            id: 'app',
-            // Allow 1 request per 10s
-            throttle: 10000,
-          },
-       })();
-    </script>
-       
-          
-    <script>
-        document.getElementById('inquiryForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            emailjs.send("service_02b3bnp", "template_jehs41p", {
-                name: name,
-                email: email,
-                message: message
-            })
-           .then(function (response) {
-                alert('Your inquiry has been sent successfully!');
-                document.getElementById('inquiryForm').reset();
-            }, function (error) {
-                alert('There was an error sending your inquiry. Please try again later.');
-            });
-        });
-    </script>
+        (function () {
+            emailjs.init("MvOp4RBn18wlzkuQi");
+        })();
+    </script>    
+     
 </header>
